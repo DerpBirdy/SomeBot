@@ -58,7 +58,7 @@ class MyClient(discord.Client):
                         break
                 beg=msg.find('<', beg)+1"""
 
-            await message.channel.send('Human translation of ' + '{.author}'.format(message)[:-5] + '\'s message: \n> ' + translator.translate(msg).text)# + "\nConfidence: " + str(translator.detect(msg).confidence))
+            await message.channel.send('Human translation of ' + '{.author}'.format(message)[:-5] + '\'s message: \n> ' + (translator.translate(msg).text).format(message))# + "\nConfidence: " + str(translator.detect(msg).confidence))
 
         if msg == '.help':
             await message.channel.send('no :smiley:')
